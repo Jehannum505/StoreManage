@@ -7,11 +7,20 @@
 #include "Arduino.h"
 #include "StoreManage.h"
 
+// default converter for fn pointer
+
 float defconv(float f) {
     //this doesn't do anything, but it's better than segfaulting.
     return f;
 }
 
+/*
+ * default constructor, registers the default options: 
+ *  - stored in SI units
+ *  - default values of 0
+ *  - no name or units
+ *  - default converter
+ */
 StoreManage::StoreManage() {
     memset(_name, 0,16);
     memset(_siunits, 0, 16);
